@@ -9,7 +9,9 @@ Install instructions can be found here:
 https://docs.microsoft.com/en-us/cpp/build/vcpkg?view=vs-2019
 
 After vcpkg is installed, along with Visual Studio, simply type on the command line:
+
 vcpkg install boost:x64-windows
+
 vcpkg integrate install
 
 After that, you can open the solution file and build as normal.
