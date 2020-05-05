@@ -14,3 +14,11 @@ vcpkg install boost:x64-windows
 vcpkg integrate install  
 
 After that, you can open the solution file and build as normal.
+
+I've temporarily added the Release folder with the compiled executable for testing.
+
+It can be run like so:
+boost_beast_websocket_server_poc <address> <port> <threads>
+
+For example:
+boost_beast_websocket_server_poc 127.0.0.1 8080 2
