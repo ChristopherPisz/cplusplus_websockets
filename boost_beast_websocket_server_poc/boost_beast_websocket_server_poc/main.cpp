@@ -5,6 +5,7 @@
 #include <iostream>
 #include <memory>
 
+//----------------------------------------------------------------------------------------------------------------------
 int main(int argc, char * argv[])
 {
     // Check command line arguments
@@ -41,11 +42,11 @@ int main(int argc, char * argv[])
         return EXIT_FAILURE;
     }
 
-    unsigned short num_threads;
+    unsigned short numThreads;
     try
     {
-        num_threads = std::stoi(argv[3]);
-        if (num_threads < 1 || num_threads > 65535)
+        numThreads = std::stoi(argv[3]);
+        if (numThreads < 1 || numThreads > 65535)
             throw std::out_of_range("Number of threads argument is out of range");
     }
     catch (std::exception &)
@@ -54,11 +55,27 @@ int main(int argc, char * argv[])
     }
 
     // Create the IO Context
-    boost::asio::io_context io_context{num_threads};
+    boost::asio::io_context ioContext{ numThreads };
 
     // Launch Listener
-    std::make_shared<Listener>(io_context, boost::asio::ip::tcp::endpoint{address, port})->run();
+    std::make_shared<Listener>(ioContext, boost::asio::ip::tcp::endpoint{address, port})->run();
 
 	std::cout << "Server Starting..." << std::endl;
+
+    // Run the IO service on the specified number of threads, including this one
+    std::vector<std::thread> threads;
+    threads.reserve(numThreads - 1);
+    for (auto i = numThreads - 1; i > 0; --i)
+    {
+        threads.emplace_back(
+            [&ioContext]
+            {
+                ioContext.run();
+            });
+    }
+    ioContext.run();
+
+    // If we get here the IO service has stopped running and we are ready to clean up and exit
+
 	return 0;
 }

@@ -1,4 +1,5 @@
 #include "Listener.h"
+#include "Session.h"
 
 #include <boost/asio/strand.hpp>
 #include <boost/beast.hpp>
@@ -7,6 +8,7 @@
 #include <memory>
 
 
+//----------------------------------------------------------------------------------------------------------------------
 Listener::Listener(boost::asio::io_context& io_context,
                    boost::asio::ip::tcp::endpoint endpoint)
     :
@@ -80,7 +82,7 @@ void Listener::onAccept(boost::beast::error_code error_code, boost::asio::ip::tc
     else
     {
         // Create the session and run it
-        //std::make_shared<Session>(std::move(socket))->run();
+        std::make_shared<Session>(std::move(socket))->run();
     }
 
     // Post another accept
