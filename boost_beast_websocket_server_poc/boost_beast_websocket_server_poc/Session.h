@@ -15,7 +15,7 @@ class Session : public std::enable_shared_from_this<Session>
 public:
 
     // Move Constructor takes ownership of the socket
-    explicit Session(boost::asio::ip::tcp::socket&& socket);
+    explicit Session(boost::asio::ip::tcp::socket && socket);
 
     // Get on the correct executor
     void run();
@@ -23,7 +23,7 @@ public:
     // Start the asynchronous operation
     void onRun();
 
-    void onAccept(boost::beast::error_code error_code);
+    void onAccept(boost::beast::error_code errorCode);
 
     void doRead();
 

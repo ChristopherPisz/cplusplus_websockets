@@ -41,13 +41,13 @@ void Session::onRun()
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-void Session::onAccept(boost::beast::error_code error_code)
+void Session::onAccept(boost::beast::error_code errorCode)
 {
-    if (error_code)
+    if (errorCode)
     {
         // TODO - Fairly certain we cannot throw from the strand
         //        Would probably just log and continue on to accept other connections
-        std::cerr << "Session::onAccept called with error code: " << error_code << std::endl;
+        std::cerr << "Session::onAccept called with error code: " << errorCode << std::endl;
     }
 
     // Read a message
