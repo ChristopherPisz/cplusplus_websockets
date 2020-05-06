@@ -16,14 +16,14 @@ vcpkg integrate install
 
 After that, you can open the solution file and build as normal.
 
-Linux:
-I used a hyper-v installation of Ubuntu 18.04
-I installed all the gcc tools, cmake, etc.
-You will have to download and build boost yourself.
-Edit the CmakeLists.txt BOOST_ROOT variable to point to the boost directory
+Linux: 
+I used a hyper-v installation of Ubuntu 18.04 
+I installed all the gcc tools, cmake, etc. 
+You will have to download and build boost yourself. 
+Edit the CmakeLists.txt BOOST_ROOT variable to point to the boost directory 
 
-To run the program, open a terminal and use this command:
-boost_beast_websocket_server_poc <address> <port> <threads>
+To run the program, open a terminal and use this command: 
+boost_beast_websocket_server_poc <address> <port> <threads> 
 
-For example:
-boost_beast_websocket_server_poc 127.0.0.1 8080 2
+For example: 
+boost_beast_websocket_server_poc 127.0.0.1 8080 2 
