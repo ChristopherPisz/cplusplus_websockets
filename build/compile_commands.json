@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/fleshbits/git-workspace/cplusplus_websockets/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/fleshbits/git-workspace/boost_1_72_0 -I.  -g   -o CMakeFiles/boost_beast_websocket_server_poc.dir/boost_beast_websocket_server_poc/Session.cpp.o -c /home/fleshbits/git-workspace/cplusplus_websockets/boost_beast_websocket_server_poc/Session.cpp",
+  "file": "/home/fleshbits/git-workspace/cplusplus_websockets/boost_beast_websocket_server_poc/Session.cpp"
+},
+
+{
+  "directory": "/home/fleshbits/git-workspace/cplusplus_websockets/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/fleshbits/git-workspace/boost_1_72_0 -I.  -g   -o CMakeFiles/boost_beast_websocket_server_poc.dir/boost_beast_websocket_server_poc/Listener.cpp.o -c /home/fleshbits/git-workspace/cplusplus_websockets/boost_beast_websocket_server_poc/Listener.cpp",
+  "file": "/home/fleshbits/git-workspace/cplusplus_websockets/boost_beast_websocket_server_poc/Listener.cpp"
+},
+
+{
+  "directory": "/home/fleshbits/git-workspace/cplusplus_websockets/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/home/fleshbits/git-workspace/boost_1_72_0 -I.  -g   -o CMakeFiles/boost_beast_websocket_server_poc.dir/boost_beast_websocket_server_poc/main.cpp.o -c /home/fleshbits/git-workspace/cplusplus_websockets/boost_beast_websocket_server_poc/main.cpp",
+  "file": "/home/fleshbits/git-workspace/cplusplus_websockets/boost_beast_websocket_server_poc/main.cpp"
+}
+]
